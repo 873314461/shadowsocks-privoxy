@@ -20,12 +20,22 @@ enforce-blocks 0
 buffer-limit 4096
 enable-proxy-authentication-forwarding 0
 
-# forward-socks5  / 127.0.0.1:7070  .  
+# global proxy
+#forward-socks5  / 127.0.0.1:7070  .  
 forward          /    .
-forward-socks5  .dropbox*.com 127.0.0.1:7070  .
-forward-socks5  .*google*.* 127.0.0.1:7070  .
-forward-socks5  .*facebook*.* 127.0.0.1:7070  .
-forward-socks5  .*twitter*.* 127.0.0.1:7070  .
+
+# DropBox
+forward-socks5  .dropbox*.com		127.0.0.1:7070  .
+# Google
+forward-socks5  .*google*.*		127.0.0.1:7070  .
+# Facebook
+forward-socks5  .*facebook*.*		127.0.0.1:7070  .
+# Twitter
+forward-socks5  .*twitter*.*		127.0.0.1:7070  .
+# TheMoveDB
+forward-socks5	.themoviedb.org		127.0.0.1:7070	.
+# TheTVDB
+forward-socks5	.thetvdb.com		127.0.0.1:7070	.
 
 forwarded-connect-retries  0
 
