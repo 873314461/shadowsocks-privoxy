@@ -1,17 +1,16 @@
-FROM alpine:latest
-MAINTAINER bluebu <bluebuwang@gmail.com>
+FROM shadowsocks/shadowsocks-libev:latest
+MAINTAINER Roccoon <i@herf.cc>
 
 #------------------------------------------------------------------------------
 # Environment variables:
 #------------------------------------------------------------------------------
+USER root
 
 RUN \
   apk --update --upgrade add \
       py-pip \
       privoxy \
   && rm /var/cache/apk/*
-
-RUN pip install shadowsocks
 
 ENV SERVER_ADDR= \
     SERVER_PORT=8899  \
